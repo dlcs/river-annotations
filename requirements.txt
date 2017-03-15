@@ -1,4 +1,5 @@
 flask
 requests
 futures
+uwsgi
 flask-cors
