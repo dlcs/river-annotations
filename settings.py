@@ -1,3 +1,4 @@
 import os
-STARSKY = os.environ.get('STARSKY_TEXT_SERVICE_URI')
-RESOLVER = "example_resolver"
+STARSKY = os.environ.get('STARSKY')
+ANNOTATION_BASE = os.environ.get('ANNOTATION_BASE')
+RESOLVER = "default_resolver"

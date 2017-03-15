@@ -1,9 +1,7 @@
-from flask import Flask, request, Response, stream_with_context, jsonify
+from flask import Flask, request, jsonify
 import settings
 import requests
 import logging
-import json
-from concurrent.futures import ThreadPoolExecutor
 
 app = Flask(__name__)
 resolver = __import__(settings.RESOLVER)
@@ -56,7 +54,7 @@ def annotation_for_line(line, count, info):
             "chars": line["text"],
 
         },
-        "on": info.get("canvasURI") + "#xywh=" + line["xywh"]
+        "on": info.get("canvasURI") + "#xywh=" + line["xywh"][0]['xywh']
     }
 
     return annotation
