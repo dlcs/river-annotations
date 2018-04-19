@@ -2,8 +2,12 @@ from flask import Flask, request, jsonify
 import settings
 import requests
 import logging
+from flask_cors import CORS
 
-app = Flask(__name__)
+application = Flask(__name__)
+app = application
+CORS(app)
+
 resolver = __import__(settings.RESOLVER)
 
 

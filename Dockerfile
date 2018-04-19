@@ -12,7 +12,6 @@ COPY etc/river.nginx.conf /etc/nginx/sites-available/river
 RUN ln -s /etc/nginx/sites-available/river /etc/nginx/sites-enabled/river && rm -f /etc/nginx/sites-enabled/default
 
 WORKDIR /opt/river
-
 RUN pip install -r requirements.txt
 
 CMD ./run_river_annotations.sh
