@@ -32,9 +32,10 @@ def annotations():
 
     body = req.json()
     count = 0
-    for line in body["lines"]:
-        resources.append(annotation_for_line(line, count, info))
-        count += 1
+    if "lines" in body:
+        for line in body["lines"]:
+            resources.append(annotation_for_line(line, count, info))
+            count += 1
 
     annotation_list = {
         "@context": "http://iiif.io/api/presentation/2/context.json",
